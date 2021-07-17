@@ -70,7 +70,6 @@ namespace PersonelKayit
             {
                 int maas = Convert.ToInt32(mskMaas.Text);
 
-                komut.Parameters.AddWithValue("@p5", label10.Text);
                 komut.Parameters.AddWithValue("@p1", txtAd.Text);
                 komut.Parameters.AddWithValue("@p2", txtSoyad.Text);
                 komut.Parameters.AddWithValue("@p3", CmbSehir.Text);
