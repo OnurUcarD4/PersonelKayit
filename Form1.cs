@@ -32,7 +32,7 @@ namespace PersonelKayit
             CmbSehir.Text = "";
             mskMaas.Text = "";
             radioButton1.Checked = false;
-            radioButton2.Checked = false;
+            radioButton2.Checked = true;
             txtAd.Focus();
 
         }
