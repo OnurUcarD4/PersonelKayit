@@ -63,9 +63,39 @@ namespace PersonelKayit.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap avatar_png_1 {
+            get {
+                object obj = ResourceManager.GetObject("avatar-png-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Fast_Forward_Academy_icon_06112014093659 {
+            get {
+                object obj = ResourceManager.GetObject("Fast-Forward-Academy-icon_06112014093659", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap kisspng_art_film_logo_cinema_clip_art_movie_logo_cliparts_5ab587fb2edc64 {
             get {
                 object obj = ResourceManager.GetObject("kisspng-art-film-logo-cinema-clip-art-movie-logo-cliparts-5ab587fb2edc64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap uukadın {
+            get {
+                object obj = ResourceManager.GetObject("uukadın", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

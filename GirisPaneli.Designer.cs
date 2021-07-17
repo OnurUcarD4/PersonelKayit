@@ -62,7 +62,7 @@ namespace PersonelKayit
             this.txtSifre.MaxLength = 10;
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.Size = new System.Drawing.Size(137, 26);
-            this.txtSifre.TabIndex = 3;
+            this.txtSifre.TabIndex = 2;
             this.txtSifre.UseSystemPasswordChar = true;
             // 
             // label2
@@ -89,7 +89,7 @@ namespace PersonelKayit
             this.btnGirisYap.Location = new System.Drawing.Point(124, 128);
             this.btnGirisYap.Name = "btnGirisYap";
             this.btnGirisYap.Size = new System.Drawing.Size(137, 29);
-            this.btnGirisYap.TabIndex = 5;
+            this.btnGirisYap.TabIndex = 3;
             this.btnGirisYap.Text = "Giriş Yap";
             this.btnGirisYap.UseVisualStyleBackColor = true;
             this.btnGirisYap.Click += new System.EventHandler(this.btnGirisYap_Click);
@@ -99,13 +99,14 @@ namespace PersonelKayit
             this.button1.Location = new System.Drawing.Point(124, 167);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(137, 29);
-            this.button1.TabIndex = 6;
+            this.button1.TabIndex = 4;
             this.button1.Text = "Kayıt Ol";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // GirisPaneli
             // 
+            this.AcceptButton = this.btnGirisYap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;

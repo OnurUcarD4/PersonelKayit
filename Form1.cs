@@ -24,14 +24,15 @@ namespace PersonelKayit
         SqlConnection baglanti = new SqlConnection("Data Source = DESKTOP-Q0J7R6D\\SQLEXPRESS; Initial Catalog = PersonelVeriTabani; Integrated Security = True");
         void temizle()
         {
-            
+
             txtid.Text = "";
             txtAd.Text = "";
             txtMeslek.Text = "";
             txtSoyad.Text = "";
-            CmbSehir.Text = "";
+            CmbSehir.SelectedIndex = -1;
             mskMaas.Text = "";
             radioButton1.Checked = false;
+            radioButton2.Checked = false;
             radioButton2.Checked = true;
             txtAd.Focus();
 
@@ -49,43 +50,51 @@ namespace PersonelKayit
             dataGridView1.DataSource = ds.Tables["Personel"].DefaultView;
         }
 
-        private void btnListele_Click(object sender, EventArgs e)
+        public void listele()
         {
             string sql = "Select*from Tbl_Personel";
-              
+
             SqlDataAdapter da = new SqlDataAdapter(sql, baglanti);
             DataSet ds = new DataSet();
             da.Fill(ds, "Personel");
             dataGridView1.DataSource = ds.Tables["Personel"].DefaultView;
-            
+        }
+
+
+        private void btnListele_Click(object sender, EventArgs e)
+        {
+            listele();
+
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             baglanti.Open();
 
-            SqlCommand komut = new SqlCommand("insert into Tbl_Personel (PerAd,PerSoyad,PerSehir,PerMaas,PerDurum,PerMeslek) values (@p1,@p2,@p3,@p4,@p5,@p6)",baglanti);
-           
+            SqlCommand komut = new SqlCommand("insert into Tbl_Personel (PerAd,PerSoyad,PerSehir,PerMaas,PerDurum,PerMeslek) values (@p1,@p2,@p3,@p4,@p5,@p6)", baglanti);
+
             try
             {
                 int maas = Convert.ToInt32(mskMaas.Text);
 
-                komut.Parameters.AddWithValue("@p5", label10.Text);
+                komut.Parameters.AddWithValue("@p5", durum  );
                 komut.Parameters.AddWithValue("@p1", txtAd.Text);
                 komut.Parameters.AddWithValue("@p2", txtSoyad.Text);
-                komut.Parameters.AddWithValue("@p3", CmbSehir.Text);
+                komut.Parameters.AddWithValue("@p3", CmbSehir.SelectedItem.ToString());
                 komut.Parameters.Add("@p4", SqlDbType.Int).Value = maas;
                 komut.Parameters.AddWithValue("@p6", txtMeslek.Text);
                 komut.ExecuteNonQuery();
                 MessageBox.Show("Personel Eklendi.");
+                listele();
             }
-            catch
+            catch (Exception err)
             {
-                MessageBox.Show("hata");
+                MessageBox.Show(err+"");
             }
-           
+
+
             baglanti.Close();
-           
+
         }
 
         private void btnTemizle_Click(object sender, EventArgs e)
@@ -102,51 +111,43 @@ namespace PersonelKayit
             txtMeslek.Text = dataGridView1.Rows[secilen].Cells[6].Value.ToString();
             CmbSehir.Text = dataGridView1.Rows[secilen].Cells[3].Value.ToString();
             mskMaas.Text = dataGridView1.Rows[secilen].Cells[4].Value.ToString();
-            label10.Text = dataGridView1.Rows[secilen].Cells[5].Value.ToString();
-
+            bool medenidurum= Convert.ToBoolean(dataGridView1.Rows[secilen].Cells[5].Value);
+            if (medenidurum == false)
+            {
+                radioButton2.Checked=true;
+            }
+            else
+            {
+                radioButton1.Checked = true;
+            }
+            
+          
 
         }
-
+        bool durum;
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            label10.Text = "true";
+            durum = true;
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            label10.Text = "false";
-        }
-
-        private void label10_TextChanged(object sender, EventArgs e)
-        {
-            if (label10.Text == "True")
-            {
-                radioButton1.Checked = true;
-            }
-            if (label10.Text == "False")
-            {
-                radioButton2.Checked = true;
-            }
+            durum = false;
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
 
-            
+
             baglanti.Open();
-            SqlCommand sil = new SqlCommand("delete from Tbl_Personel Where PerID=@k1",baglanti);
+            SqlCommand sil = new SqlCommand("delete from Tbl_Personel Where PerID=@k1", baglanti);
             sil.Parameters.AddWithValue("@k1", txtid.Text);
             sil.ExecuteNonQuery();
             MessageBox.Show("Kayıt silindi.");
-            SqlCommand sil2 = new SqlCommand("DBCC CHECKIDENT (Tbl_Personel, RESEED, 0)",baglanti);
+            SqlCommand sil2 = new SqlCommand("DBCC CHECKIDENT (Tbl_Personel, RESEED, 0)", baglanti);
             sil2.ExecuteNonQuery();
             baglanti.Close();
-            string sql = "Select*from Tbl_Personel";
-
-            SqlDataAdapter da = new SqlDataAdapter(sql, baglanti);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "Personel");
-            dataGridView1.DataSource = ds.Tables["Personel"].DefaultView;
+            listele();
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
@@ -155,13 +156,14 @@ namespace PersonelKayit
             SqlCommand guncelle = new SqlCommand("Update Tbl_Personel Set PerAd=@a1, Persoyad=@a2, Persehir=@a3, Permaas=@a4, Perdurum=@a5, Permeslek=@a6 where PerID=@a7", baglanti);
             guncelle.Parameters.AddWithValue("@a1", txtAd.Text);
             guncelle.Parameters.AddWithValue("@a2", txtSoyad.Text);
-            guncelle.Parameters.AddWithValue("@a3", CmbSehir.Text);
+            guncelle.Parameters.AddWithValue("@a3", CmbSehir.SelectedItem.ToString());
             guncelle.Parameters.AddWithValue("@a4", mskMaas.Text);
-            guncelle.Parameters.AddWithValue("@a5", label10.Text);
+            guncelle.Parameters.AddWithValue("@a5", durum);
             guncelle.Parameters.AddWithValue("@a6", txtMeslek.Text);
             guncelle.Parameters.AddWithValue("@a7", txtid.Text);
             MessageBox.Show("Kayıt güncellendi.");
             guncelle.ExecuteNonQuery();
+            listele();
             baglanti.Close();
         }
 

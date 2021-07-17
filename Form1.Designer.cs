@@ -1,4 +1,5 @@
 ﻿
+﻿
 namespace PersonelKayit
 {
     partial class Form1
@@ -63,7 +64,6 @@ namespace PersonelKayit
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.peridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.perAdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,13 +75,19 @@ namespace PersonelKayit
             this.tblPersonelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.personelVeriTabaniDataSet = new PersonelKayit.PersonelVeriTabaniDataSet();
             this.tbl_PersonelTableAdapter = new PersonelKayit.PersonelVeriTabaniDataSetTableAdapters.Tbl_PersonelTableAdapter();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblPersonelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personelVeriTabaniDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,13 +172,99 @@ namespace PersonelKayit
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(55, 27);
             this.radioButton1.TabIndex = 7;
+            this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Evli";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // CmbSehir
             // 
-            this.CmbSehir.FormattingEnabled = true;
+            this.CmbSehir.DropDownHeight = 300;
+            this.CmbSehir.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbSehir.DropDownWidth = 40;
+            this.CmbSehir.IntegralHeight = false;
+            this.CmbSehir.Items.AddRange(new object[] {
+            "Adana",
+            "Adıyaman",
+            "Afyon",
+            "Ağrı",
+            "Amasya",
+            "Ankara",
+            "Antalya",
+            "Artvin",
+            "Aydın",
+            "Balıkesir",
+            "Bilecik",
+            "Bingöl",
+            "Bitlis",
+            "Bolu",
+            "Burdur",
+            "Bursa",
+            "Çanakkale",
+            "Çankırı",
+            "Çorum",
+            "Denizli",
+            "Diyarbakır",
+            "Edirne",
+            "Elazığ",
+            "Erzincan",
+            "Erzurum",
+            "Eskişehir",
+            "Gaziantep",
+            "Giresun",
+            "Gümüşhane",
+            "Hakkari",
+            "Hatay",
+            "Isparta",
+            "Mersin",
+            "İstanbul",
+            "İzmir",
+            "Kars",
+            "Kastamonu",
+            "Kayseri",
+            "Kırklareli",
+            "Kırşehir",
+            "Kocaeli",
+            "Konya",
+            "Kütahya",
+            "Malatya",
+            "Manisa",
+            "K.maraş",
+            "Mardin",
+            "Muğla",
+            "Muş",
+            "Nevşehir",
+            "Niğde",
+            "Ordu",
+            "Rize",
+            "Sakarya",
+            "Samsun",
+            "Siirt",
+            "Sinop",
+            "Sivas",
+            "Tekirdağ",
+            "Tokat",
+            "Trabzon",
+            "Tunceli",
+            "Şanlıurfa",
+            "Uşak",
+            "Van",
+            "Yozgat",
+            "Zonguldak",
+            "Aksaray",
+            "Bayburt",
+            "Karaman",
+            "Kırıkkale",
+            "Batman",
+            "Şırnak",
+            "Bartın",
+            "Ardahan",
+            "Iğdır",
+            "Yalova",
+            "Karabük",
+            "Kilis",
+            "Osmaniye",
+            "Düzce"});
             this.CmbSehir.Location = new System.Drawing.Point(117, 188);
             this.CmbSehir.Name = "CmbSehir";
             this.CmbSehir.Size = new System.Drawing.Size(132, 31);
@@ -181,6 +273,7 @@ namespace PersonelKayit
             // txtMeslek
             // 
             this.txtMeslek.Location = new System.Drawing.Point(117, 152);
+            this.txtMeslek.MaxLength = 50;
             this.txtMeslek.Name = "txtMeslek";
             this.txtMeslek.Size = new System.Drawing.Size(132, 31);
             this.txtMeslek.TabIndex = 4;
@@ -214,6 +307,7 @@ namespace PersonelKayit
             // txtSoyad
             // 
             this.txtSoyad.Location = new System.Drawing.Point(117, 115);
+            this.txtSoyad.MaxLength = 15;
             this.txtSoyad.Name = "txtSoyad";
             this.txtSoyad.Size = new System.Drawing.Size(132, 31);
             this.txtSoyad.TabIndex = 3;
@@ -230,6 +324,7 @@ namespace PersonelKayit
             // txtAd
             // 
             this.txtAd.Location = new System.Drawing.Point(117, 78);
+            this.txtAd.MaxLength = 20;
             this.txtAd.Name = "txtAd";
             this.txtAd.Size = new System.Drawing.Size(132, 31);
             this.txtAd.TabIndex = 2;
@@ -351,7 +446,6 @@ namespace PersonelKayit
             // 
             this.groupBox3.Controls.Add(this.checkBox2);
             this.groupBox3.Controls.Add(this.checkBox1);
-            this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Location = new System.Drawing.Point(13, 336);
             this.groupBox3.Name = "groupBox3";
@@ -383,17 +477,6 @@ namespace PersonelKayit
             this.checkBox1.TabIndex = 17;
             this.checkBox1.Text = "Evli";
             this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(860, 7);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 23);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "label10";
-            this.label10.Visible = false;
-            this.label10.TextChanged += new System.EventHandler(this.label10_TextChanged);
             // 
             // dataGridView1
             // 
@@ -511,15 +594,56 @@ namespace PersonelKayit
             // 
             this.tbl_PersonelTableAdapter.ClearBeforeFill = true;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::PersonelKayit.Properties.Resources.Fast_Forward_Academy_icon_06112014093659;
+            this.pictureBox3.Location = new System.Drawing.Point(551, -2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(158, 158);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 32;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::PersonelKayit.Properties.Resources.uukadın;
+            this.pictureBox2.Location = new System.Drawing.Point(754, 160);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(158, 158);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 31;
+            this.pictureBox2.TabStop = false;
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::PersonelKayit.Properties.Resources.kisspng_art_film_logo_cinema_clip_art_movie_logo_cliparts_5ab587fb2edc64;
-            this.pictureBox1.Location = new System.Drawing.Point(520, 12);
+            this.pictureBox1.Image = global::PersonelKayit.Properties.Resources.avatar_png_1;
+            this.pictureBox1.Location = new System.Drawing.Point(551, 160);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(430, 318);
+            this.pictureBox1.Size = new System.Drawing.Size(158, 158);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Adobe Arabic", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(715, 21);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(173, 38);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "Personel Kayıt";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Adobe Arabic", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label11.Location = new System.Drawing.Point(865, 46);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(34, 21);
+            this.label11.TabIndex = 34;
+            this.label11.Text = "v1.0";
             // 
             // Form1
             // 
@@ -527,6 +651,10 @@ namespace PersonelKayit
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(968, 558);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
@@ -549,8 +677,11 @@ namespace PersonelKayit
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblPersonelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personelVeriTabaniDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -587,7 +718,6 @@ namespace PersonelKayit
         private PersonelVeriTabaniDataSet personelVeriTabaniDataSet;
         private System.Windows.Forms.BindingSource tblPersonelBindingSource;
         private PersonelVeriTabaniDataSetTableAdapters.Tbl_PersonelTableAdapter tbl_PersonelTableAdapter;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
@@ -598,6 +728,10 @@ namespace PersonelKayit
         private System.Windows.Forms.DataGridViewTextBoxColumn perMaasDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn perDurumDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn perMeslekDataGridViewTextBoxColumn;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }
 

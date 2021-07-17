@@ -263,6 +263,9 @@
     <Content Include="Core\Compression\Zstandard\lib\win\libzstd.dll" />
     <Content Include="Fast-Forward-Academy-icon_06112014093659.ico" />
     <Content Include="mongocrypt.dll" />
+    <None Include="Resources\avatar-png-1.png" />
+    <None Include="Resources\uukadın.png" />
+    <None Include="Resources\Fast-Forward-Academy-icon_06112014093659.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
